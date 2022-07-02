@@ -12,6 +12,10 @@ app.use(express.urlencoded({
 }));
 app.use(cookieParser());
 
+const db = require('./config/mongoose');
+
+
+
 app.use(express.static('assets'));
 
 
