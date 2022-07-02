@@ -1,29 +1,40 @@
+header{
+  background-color: rgb(42,136,173);
+}
+
+
 .block{
   display: block;
 }
+
+
+
+
+
 nav{
     display: flex;
     justify-content: space-between;
     
 }
+
 #header-body{
   
-  height: 100px;
+  height: 100vh !important;
+  width: 100vw !important;
   display: flex;
-  align-content: center;
-  justify-content: center;
-  
+
+ justify-content: center;
+ align-items: center;
+
 }
-#brief{
-  margin-top: 50px;
-}
+
 #sign-in-button{
     display: fixed;
     padding-right: 50px;
 }
 
 body{
-    padding: 0px;
+    
     background-image: url("/images/background.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -61,16 +72,10 @@ body{
 
 
 
-  footer{
-    /* TODO CHANGE */
-    height: 900px;
-  }
+
 
   .nav-text-color{
     color: wheat;
     font-size: 0.9em;
   }
-  #header-body{
-    padding-top: 10px;
-
-  }
+  

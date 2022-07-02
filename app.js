@@ -3,12 +3,14 @@ const app = express();
 const PORT = 8000;
 
 
-
+const cookieParser = require('cookie-parser');
+const expressLayouts = require('express-ejs-layouts');
 
 app.use(express.json());
 app.use(express.urlencoded({
   extended: false
 }));
+app.use(cookieParser());
 
 app.use(express.static('assets'));
 
@@ -16,7 +18,6 @@ app.use(express.static('assets'));
 
 app.set('view engine','ejs');
 app.set('views','./views');
-
 
 
 app.use('/',require("./routers/index"));
