@@ -14,7 +14,7 @@ module.exports.register  = function(req,res){
 
     console.log(req.body);
 
-    // checking if 2 passsword are equal
+    // checking if 2 password are equal
     if(req.body.password != req.body.confirm){
         console.log("1");
         return res.redirect('back'); 
@@ -44,3 +44,4 @@ module.exports.register  = function(req,res){
 
     });
 }
+

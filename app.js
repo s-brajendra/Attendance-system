@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const PORT = 8000;
+const session = require("express-session");
+const passport = require("passport");
+const localPassport = require("./config/passport_local_strategy");
 
 
 const cookieParser = require('cookie-parser');
@@ -23,6 +26,19 @@ app.use(express.static('assets'));
 app.set('view engine','ejs');
 app.set('views','./views');
 
+app.use(session({
+    name: 'oneRun',
+    // change this secret key
+    secret: "keytoencryptthecodedata",
+    saveUninitialized:false,
+    resave:false,
+    cookie:{
+        maxAge: (1000*60*60),
+    }
+}))
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/',require("./routers/index"));
 

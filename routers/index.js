@@ -6,6 +6,15 @@ const homeController = require('../controllers/home_controller');
 router.get("/home",homeController.home);
 
 
+
+router.use("/session",require("./dashboard"));
+
+
+
+
+
+
+
 router.use("/user", require("./users"));
 
 
