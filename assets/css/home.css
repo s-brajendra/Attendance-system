@@ -1,0 +1,70 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    
+}
+#logo{
+    display: inline;
+}
+#sign-in-button{
+    display: inline;
+    padding-right: 5%;
+}
+
+body{
+    padding: 0px;
+    background-image: url("/images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    
+    
+    
+}
+
+#page{
+  
+    background-image: url("/images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+.navbar-brand {
+    letter-spacing: 3px;
+    color: wheat;
+  }
+  
+  .navbar-brand:hover {
+      color: wheat;
+  }
+  
+  .navbar-scroll .nav-link,
+  .navbar-scroll .fa-bars {
+    color:  wheat;
+  }
+  
+  .navbar-scrolled .nav-link,
+  .navbar-scrolled .fa-bars {
+    color:  wheat;
+  }
+  
+  .navbar-scrolled {
+    background-color: wheat;
+  }
+
+
+
+  footer{
+    /* TODO CHANGE */
+    height: 900px;
+  }
+
+  .nav-text-color{
+    color: wheat;
+    font-size: 0.9em;
+  }
