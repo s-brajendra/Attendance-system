@@ -1,14 +1,25 @@
+.block{
+  display: block;
+}
 nav{
     display: flex;
     justify-content: space-between;
     
 }
-#logo{
-    display: inline;
+#header-body{
+  
+  height: 100px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  
+}
+#brief{
+  margin-top: 50px;
 }
 #sign-in-button{
-    display: inline;
-    padding-right: 5%;
+    display: fixed;
+    padding-right: 50px;
 }
 
 body{
@@ -24,15 +35,6 @@ body{
     
 }
 
-#page{
-  
-    background-image: url("/images/background.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    
-}
 
 .navbar-brand {
     letter-spacing: 3px;
@@ -67,4 +69,8 @@ body{
   .nav-text-color{
     color: wheat;
     font-size: 0.9em;
+  }
+  #header-body{
+    padding-top: 10px;
+
   }
