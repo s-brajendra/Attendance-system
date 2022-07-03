@@ -2,7 +2,10 @@
 const mongoose = require('mongoose');
 
 // mongoose.connect('mongodb+srv://sb7acc1:sb7acc1@cluster0.eacbebf.mongodb.net/?retryWrites=true&w=majority');
-mongoose.connect("mongodb+srv://sb7acc1:sb7acc1@cluster0.eacbebf.mongodb.net/?retryWrites=true&w=majority");
+
+const MONGO_URL = process.env.MONGO_URL;
+
+mongoose.connect(MONGO_URL);
 // mongodb://127.0.0.1:27017
 
 

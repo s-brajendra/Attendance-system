@@ -1,13 +1,19 @@
 const express = require('express');
 const app = express();
-const PORT = 8000;
+require("dotenv").config();
+
+
 const session = require("express-session");
 const passport = require("passport");
 const localPassport = require("./config/passport_local_strategy");
 
+// to save cookie so that page do not get log out in each reinstantiation
+const mongoStore = require("connect-mongodb-session")(session);
+
 
 const cookieParser = require('cookie-parser');
 const expressLayouts = require('express-ejs-layouts');
+
 
 app.use(express.json());
 app.use(express.urlencoded({
@@ -29,13 +35,30 @@ app.set('views','./views');
 app.use(session({
     name: 'oneRun',
     // change this secret key
-    secret: "keytoencryptthecodedata",
+    
     saveUninitialized:false,
     resave:false,
-    cookie:{
-        maxAge: (1000*60*60),
+    // secret: "keytoencryptthecodedata", 1
+    
+    cookie:{maxAge: (1000*60*60),},
+
+    store: new mongoStore({
+
+        mongooseConnection: db,
+        autoRemove:"disabled",
+        //depricated
+        secret: process.env.SESSION_SECRET,
+        
+        
+
+    },
+    function(err){
+        if(err){
+        console.log("error in mongo store");
+        }
     }
-}))
+    )
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -54,7 +77,7 @@ app.use('/',require("./routers/index"));
 
 
 app.use(errorHandler);
-app.listen(PORT,function(err){
+app.listen(process.env.PORT ,function(err){
     if(err){
         console.log("errror in running server");
     }

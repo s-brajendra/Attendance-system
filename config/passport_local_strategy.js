@@ -4,8 +4,8 @@ const LocalStrategy = require("passport-local").Strategy;
 const Credential = require("../models/school_credentials");
 
 passport.use(new LocalStrategy({
-    usernameField: "email"
-    }, function(email,password,done){
+    usernameField: "email" // **
+    }, function(email,password,done){ // call back function which decides how we are authorizing our user
         // finding user
         Credential.findOne({email: email},function(err,user){
             if(err){
@@ -36,6 +36,8 @@ passport.serializeUser(function(user,done){
     done(null, user.id);
 });
 
+
+// vice versa
 passport.deserializeUser (function(id,done){
     Credential.findById(id, function(err, user){
         if(err){
@@ -61,7 +63,9 @@ passport.checkAuthentication  = function(req,res,next){
 passport.setAuthUser = function(req,res,next){
     if(req.isAuthenticated()){
         // to transfer signed in user data to locals so that we can use it in views
-        res.locals.user = res.user; 
+        res.locals.user = res.user;
+        // this will make user object available in req for all sessions started by him
+        
         
     }
     next();
