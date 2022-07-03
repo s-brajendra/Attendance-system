@@ -38,6 +38,7 @@ app.use(session({
     
     saveUninitialized:false,
     resave:false,
+    secret: process.env.SESSION_SECRET,
     // secret: "keytoencryptthecodedata", 1
     
     cookie:{maxAge: (1000*60*60),},
@@ -47,7 +48,7 @@ app.use(session({
         mongooseConnection: db,
         autoRemove:"disabled",
         //depricated
-        secret: process.env.SESSION_SECRET,
+        
         
         
 
