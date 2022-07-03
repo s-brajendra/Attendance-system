@@ -1,11 +1,20 @@
 module.exports.signUp = function(req,res){
+
+    if(req.isAuthenticated()){
+        return res.redirect("/session/Dashboard");
+    }
+
     return res.render("sign_up");
 }
 
 module.exports.signIn = function(req,res){
+    if(req.isAuthenticated()){
+        return res.redirect("/session/Dashboard");
+    }
     return res.render("sign_in");
 }
 
+const { response } = require("express");
 const credentials = require("../models/school_credentials");
 
 

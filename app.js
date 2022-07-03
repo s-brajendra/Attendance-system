@@ -40,6 +40,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+// user data is accessed
+app.use(passport.setAuthUser);
+
 app.use('/',require("./routers/index"));
 
 

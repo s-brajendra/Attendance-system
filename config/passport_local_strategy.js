@@ -62,7 +62,9 @@ passport.setAuthUser = function(req,res,next){
     if(req.isAuthenticated()){
         // to transfer signed in user data to locals so that we can use it in views
         res.locals.user = res.user; 
+        
     }
+    next();
 }
 
 
