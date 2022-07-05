@@ -15,6 +15,10 @@ router.post('/Dashboard',passport.authenticate(
 
 router.get('/Dashboard',passport.checkAuthentication ,dashboardController.Dashboard);
 
+router.post('/idcard',passport.checkAuthentication ,dashboardController.idCard);
+
+router.get('/student',passport.checkAuthentication ,dashboardController.student);
+
 
 
 

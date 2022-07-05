@@ -8,7 +8,7 @@ const passport = require("passport");
 const localPassport = require("./config/passport_local_strategy");
 
 // to save cookie so that page do not get log out in each reinstantiation
-const mongoStore = require("connect-mongodb-session")(session);
+var mongoStore = require("connect-mongo");
 
 
 const cookieParser = require('cookie-parser');
@@ -43,22 +43,22 @@ app.use(session({
     
     cookie:{maxAge: (1000*60*60),},
 
-    store: new mongoStore({
+    // store: new mongoStore({
 
-        mongooseConnection: db,
-        autoRemove:"disabled",
-        //depricated
+    //     mongooseConnection: db,
+    //     autoRemove:"disabled",
+    //     //depricated
         
         
         
 
-    },
-    function(err){
-        if(err){
-        console.log("error in mongo store");
-        }
-    }
-    )
+    // },
+    // function(err){
+    //     if(err){
+    //     console.log("error in mongo store");
+    //     }
+    // }
+    // )
 }));
 
 app.use(passport.initialize());
