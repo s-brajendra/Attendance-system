@@ -75,3 +75,5 @@ module.exports.idCard = function(req,res){
 
 
 }
+
+

@@ -54,3 +54,8 @@ module.exports.register  = function(req,res){
     });
 }
 
+
+
+module.exports.recog = function(req,res){
+    return res.render("recog");
+}

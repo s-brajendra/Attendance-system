@@ -12,7 +12,7 @@ router.get("/sign-in",usersController.signIn);
 
 router.post("/register", usersController.register);
 
-
+router.get('/recog' ,usersController.recog);
 
 
 
