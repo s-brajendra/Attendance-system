@@ -1,0 +1,52 @@
+.index{
+    background-color: rgb(108,122,224);
+    opacity: 95%;
+    margin-bottom: 10px;
+}
+.table-radius{
+    border-radius: 10px;
+    height: 50px;
+
+    
+}
+
+.table-row{
+    background-color:rgb(234, 252, 252);
+    margin-bottom: 10px;
+}
+.box-border{
+
+    border: 1px solid black;
+    
+    
+    
+}
+
+.cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@keyframes changeColor{
+    from{background-color: inherit;
+
+    }
+    to{
+        background-color: rgb(108,122,224);
+        opacity: 50%;
+
+    }
+
+}
+.table-row:hover{
+    animation: changeColor;
+    opacity: 100%;
+    background-color:rgb(210, 216, 255) ;
+   
+}
+
+.table-row{
+    animation: changeColor;
+}

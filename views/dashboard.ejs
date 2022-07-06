@@ -8,34 +8,81 @@
 
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <body>
+    <script>
+        const row = document.getElementById('table-hover');
+        row.addEventListener('')
+    </script>
     
     <div id = "students-div"  style = " text-align:center;">
         <h5> registered students</h5>
 
-        <div>
-            
-                <% for(data of id){%>
-                    <div style="display:flex ; justify-content: center;" >
-                        <div >
-                            
-                        <label for="">Name </label>  <%=  data.name %> <br>
-                        <label for="">Roll No </label>  <%= data.roll %><br>
-                        <label for="">Phone no </label>  <%= data.phone %><br>
-                        <label for="">Email </label>  <%= data.email %>
-                        <hr>
-                        </div>
-                    </div>
-
-                    <%}%>
-                
-                    
-                
-        </div>
+       
         
 
     </div>
+
+    <div class="container box-border " >
+
+        
+        <div class="row table-hover index table-radius" >
+            <div class=" cell col-3 text-center">
+                Full Name
+
+            </div>
+            
+
+            <div class="cell col-3 text-center">
+                Roll No
+            </div>
+            <div class=" cell col-3 text-center">
+                Phone no
+            </div>
+            <div class=" cell col-3 text-center">
+                Email
+            </div>
+            
+        </div>
+        
+
+        <% for(data of id){%>
+
+            <div id="" class="row table-hover table-radius table-row" >
+                <div class="cell col-3 text-center ">
+                    <%=  data.name %> 
+    
+                </div>
+                <div class="cell  col-3 text-center">
+                    <%= data.roll %>
+                </div>
+                <div class="cell col-3 text-center">
+                    <%= data.phone %>
+                </div>
+                <div class="cell col-3 text-center">
+                    <%= data.email %>
+                </div>
+
+                
+            </div>
+            
+        <%}%>
+
+
+
+
+
+
+        
+
+
+    </div>
+
+
+
+
+
     <div>
         <a href="/session/student"><button  class="btn btn-sm nav-text-color">Add Student</button>  </a>
     </div>
