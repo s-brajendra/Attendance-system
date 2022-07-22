@@ -13,9 +13,28 @@ router.post('/Dashboard',passport.authenticate(
     }, 
     ),dashboardController.Dashboard);
 
+
+
+    
 router.get('/Dashboard',passport.checkAuthentication ,dashboardController.Dashboard);
 
-router.post('/idcard',passport.checkAuthentication ,dashboardController.idCard);
+
+const path = require('path');
+
+const multer = require('multer');
+const storage = multer.diskStorage({
+    destination: (req,res ,cb) => {
+        cb(null, 'images')
+    },
+    filename: (req,file,cb) => {
+        console.log(file);
+        cb(null, Date.now()+ path.extname(file.originalname))
+    }
+});
+
+const uploads = multer({storage: storage});
+
+router.post('/idcard',passport.checkAuthentication, uploads.single('image') ,dashboardController.idCard);
 
 router.get('/student',passport.checkAuthentication ,dashboardController.student);
 

@@ -31,6 +31,27 @@ module.exports.student = function(req,res){
         // data here of user
     });
 }
+const path = require('path');
+
+const multer = require('multer');
+const storage = multer.diskStorage({
+    destination: (req,res ,cb) => {
+        cb(null, '../assets/labeled_images')
+    },
+    filename: (req,file,cb) => {
+        console.log(file);
+        cb(null, Date.now()+ path.extname(file.originalname))
+    }
+});
+
+const uploads = multer({storage: storage});
+
+
+
+
+
+
+
 
 module.exports.idCard = function(req,res){
     // if(req.user.id ==  req.params.id){

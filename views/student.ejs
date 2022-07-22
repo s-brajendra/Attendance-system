@@ -49,7 +49,7 @@
         <h1>Add Student details!<span>Sign up and tell us what you think of the site!</span></h1>
         <!-- enctype="multipart/form-data" -->
         
-        <form method="post" action = "/session/idcard" >
+        <form method="post" enctype="multipart/form-data" action = "/session/idcard" >
             <div class="section"><span>1</span> Name & Roll No</div>
             <div class="inner-wrap">
                 <label>Name <input type="text" name="name" /></label>
@@ -69,8 +69,10 @@
 
 
                
-                <label>Add image  <input type='file' placeholder="profile picture" accept='image/*'  onchange="readURL(this)" ></label>
+                <label>Add image  <input type='file' placeholder="profile picture" accept='image/*' name = "image"  onchange="readURL(this)" ></label>
                 <img src="" alt="No Image" id="img" style='height:300px;'>
+
+                
 
 
 
